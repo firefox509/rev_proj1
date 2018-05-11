@@ -20,6 +20,10 @@ echo "Apache Webserver error logs:" >> report.txt
 cat /etc/httpd/logs/error* >> report.txt
 
 echo "" >> report.txt
+echo "FTP Download records:" >> report.txt
+cat /var/log/xferlog* >> report.txt
+
+echo "" >> report.txt
 echo "Disk Usage:" >> report.txt
 df -h >> report.txt
 
