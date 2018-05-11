@@ -18,3 +18,10 @@ awk '/GET \/ HTTP/ {print $0}' /etc/httpd/logs/access* >> report.txt
 echo "" >> report.txt
 echo "Apache Webserver error logs:" >> report.txt
 cat /etc/httpd/logs/error* >> report.txt
+
+echo "" >> report.txt
+echo "Disk Usage:" >> report.txt
+df -h >> report.txt
+
+sendmail root < report.txt
+rm report.txt
